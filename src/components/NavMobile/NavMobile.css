@@ -1,0 +1,19 @@
+.nav-mobile {
+  background-color: var(--dark-color);
+  height: 5rem;
+  box-shadow: 2px 0 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.nav-mobile-item {
+  color: var(--secondary-color);
+}
+
+.nav-mobile-item > a {
+  color: var(--light-color);
+  margin: 0 1rem;
+}
+
+.nav-mobile-link {
+  color: var(--secondary-color) !important;
+  text-decoration: none !important;
+}
