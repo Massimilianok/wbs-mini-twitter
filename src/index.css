@@ -1,0 +1,14 @@
+:root {
+  --primary-color: #03658c;
+  --secondary-color: #0388a6;
+  --light-color: #f2f2f2;
+  --dark-color: #01090d;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--dark-color);
+}
