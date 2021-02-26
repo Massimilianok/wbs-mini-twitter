@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col';
 import UserCard from './components/UserCard/UserCard';
 import NavMobile from './components/NavMobile/NavMobile';
 import Header from './components/Header/Header';
+import NavDesktop from './components/NavDesktop/NavDesktop';
 
 const App = () => {
   const [messages, setMessages] = useState();
@@ -56,26 +57,28 @@ const App = () => {
         <Header />
       </Row>
       <Row as={'main'} className="main">
-        <Switch>
-          <Route path="/" exact>
-            <Col xs={12}>
-              <div className="users-cards py-5">
+        <Col lg={4}>
+          <NavDesktop />
+        </Col>
+        <Col xs={12} lg={8}>
+          <Switch>
+            <Route path="/" exact>
+              <div className="users-cards py-5 text-center">
                 {users &&
                   users.map((user) => <UserCard key={user._id} {...user} />)}
               </div>
-              {messages &&
-                messages.map((message) => (
-                  <Message key={message._id} {...message} />
-                ))}
-            </Col>
-          </Route>
-          <Route path="/users">Users</Route>
-          <Route path="/users/:id">Single user</Route>
-          <Route path="/message/:id">Single message</Route>
-          <Redirect to="/" />
-        </Switch>
+              <div className="message">
+                {messages &&
+                  messages.map((message) => (
+                    <Message key={message._id} {...message} />
+                  ))}
+              </div>
+            </Route>
+            <Route path="/users">Users</Route>
+            <Redirect to="/" />
+          </Switch>
+        </Col>
       </Row>
-      <footer>footer</footer>
       <NavMobile />
     </Container>
   );

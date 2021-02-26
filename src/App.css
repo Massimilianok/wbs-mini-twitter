@@ -18,3 +18,10 @@
   margin-top: 6rem;
   margin-bottom: 6rem;
 }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .message {
+    padding: 0 8rem;
+  }
+}

@@ -8,7 +8,7 @@ import { faCommentAlt, faUserFriends } from '@fortawesome/free-solid-svg-icons';
 
 const NavMobile = () => {
   return (
-    <Navbar fixed="bottom" className="nav-mobile">
+    <Navbar fixed="bottom" className="nav-mobile d-lg-none">
       <Nav
         navbar="true"
         className="w-100 d-flex justify-content-around align-items-center"

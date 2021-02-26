@@ -1,0 +1,25 @@
+.nav-desktop {
+  background-color: var(--dark-color);
+  height: 16rem;
+  box-shadow: 2px 0 10px 1px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 8rem;
+  left: 6rem;
+  width: 18rem;
+  padding: 2rem;
+}
+
+.nav-desktop-item {
+  color: var(--secondary-color);
+  padding: 1rem 0;
+}
+
+.nav-desktop-item > a {
+  color: var(--light-color);
+  margin: 0 1rem;
+}
+
+.nav-desktop-link {
+  color: var(--secondary-color) !important;
+  text-decoration: none !important;
+}
