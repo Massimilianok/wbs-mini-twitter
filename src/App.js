@@ -8,6 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import UserCard from './components/UserCard/UserCard';
 import NavMobile from './components/NavMobile/NavMobile';
+import Header from './components/Header/Header';
 
 const App = () => {
   const [messages, setMessages] = useState();
@@ -20,11 +21,10 @@ const App = () => {
 
   return (
     <Container fluid>
-      <div>
-        header
-        <div>Searchbar</div>
-      </div>
-      <Row as={'main'}>
+      <Row>
+        <Header />
+      </Row>
+      <Row as={'main'} className="main">
         <Switch>
           <Route path="/" exact>
             <Col xs={12}>
