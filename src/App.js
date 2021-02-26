@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { messagesData, usersData } from './data';
 import './App.css';
 import Container from 'react-bootstrap/Container';
 import Message from './components/Message/Message';
@@ -15,9 +14,41 @@ const App = () => {
   const [users, setUsers] = useState();
 
   useEffect(() => {
-    setMessages(messagesData);
-    setUsers(usersData);
+    fetchMessages();
+    fetchUsers();
   }, []);
+
+  const fetchMessages = async () => {
+    try {
+      const res = await fetch(
+        'https://twitter-clone-backend-api.herokuapp.com/messages'
+      );
+      if (res.ok) {
+        const data = await res.json();
+        setMessages(data.data);
+      } else {
+        throw new Error('Error');
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const fetchUsers = async () => {
+    try {
+      const res = await fetch(
+        'https://twitter-clone-backend-api.herokuapp.com/users'
+      );
+      if (res.ok) {
+        const data = await res.json();
+        setUsers(data.data);
+      } else {
+        throw new Error('Error');
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <Container fluid>
@@ -30,11 +61,11 @@ const App = () => {
             <Col xs={12}>
               <div className="users-cards py-5">
                 {users &&
-                  users.map((user) => <UserCard key={user.id} {...user} />)}
+                  users.map((user) => <UserCard key={user._id} {...user} />)}
               </div>
               {messages &&
                 messages.map((message) => (
-                  <Message key={message.id} {...message} />
+                  <Message key={message._id} {...message} />
                 ))}
             </Col>
           </Route>

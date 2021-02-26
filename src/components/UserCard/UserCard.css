@@ -7,7 +7,11 @@
 .user-card-image-box {
   width: 3rem;
   height: 3rem;
-  border: 1px solid var(--secondary-color);
-  background-color: var(--light-color);
+  background-color: var(--secondary-color);
   margin: 0 auto;
+}
+
+.user-card > p {
+  font-size: 0.7rem;
+  padding: 1rem 0;
 }
