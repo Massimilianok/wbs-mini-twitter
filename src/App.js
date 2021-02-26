@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { messagesData } from './data';
 import Container from 'react-bootstrap/Container';
+import Message from './components/Message/Message';
 
-function App() {
+const App = () => {
+  const [messages, setMessages] = useState();
+
+  useEffect(() => {
+    setMessages(messagesData);
+  }, []);
+
   return (
     <Container fluid>
       <div>
@@ -10,11 +18,11 @@ function App() {
       </div>
       <div>user</div>
       <main>
-        <div>message</div>
+        {messages && messages.map((message) => <Message {...message} />)}
       </main>
       <footer>footer</footer>
     </Container>
   );
-}
+};
 
 export default App;

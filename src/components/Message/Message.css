@@ -1,0 +1,14 @@
+.message-image-box {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--light-color);
+}
+
+.message-header {
+  background-color: var(--secondary-color);
+}
+
+.message-footer {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
