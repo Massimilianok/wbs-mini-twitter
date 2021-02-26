@@ -9,6 +9,7 @@ import UserCard from './components/UserCard/UserCard';
 import NavMobile from './components/NavMobile/NavMobile';
 import Header from './components/Header/Header';
 import NavDesktop from './components/NavDesktop/NavDesktop';
+import UserCardList from './components/UserCardList/UserCardList';
 
 const App = () => {
   const [messages, setMessages] = useState();
@@ -67,14 +68,21 @@ const App = () => {
                 {users &&
                   users.map((user) => <UserCard key={user._id} {...user} />)}
               </div>
-              <div className="message">
+              <div className="card-desktop">
                 {messages &&
                   messages.map((message) => (
                     <Message key={message._id} {...message} />
                   ))}
               </div>
             </Route>
-            <Route path="/users">Users</Route>
+            <Route path="/users">
+              <div className="card-desktop users-list">
+                {users &&
+                  users.map((user) => (
+                    <UserCardList key={user._id} {...user} />
+                  ))}
+              </div>
+            </Route>
             <Redirect to="/" />
           </Switch>
         </Col>
