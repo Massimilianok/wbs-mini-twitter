@@ -12,3 +12,7 @@
   background-color: var(--dark-color);
   color: var(--light-color);
 }
+
+.message-footer a {
+  color: var(--light-color);
+}

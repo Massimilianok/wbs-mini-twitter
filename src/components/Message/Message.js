@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Message.css';
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
 import Badge from 'react-bootstrap/Badge';
 
-const Message = ({ text, date }) => {
+const Message = ({ text, date, _id, user_id }) => {
   const [userImages, setUserImages] = useState();
 
   useEffect(() => {
@@ -24,7 +25,7 @@ const Message = ({ text, date }) => {
       console.log(err);
     }
   };
-  
+
   return (
     <>
       {userImages && (
@@ -47,7 +48,7 @@ const Message = ({ text, date }) => {
             <Card.Text>{text}</Card.Text>
           </Card.Body>
           <Card.Footer className="message-footer text-right py-1">
-            Show details
+            <Link to={`/messages/${_id}?user=${user_id}`}>Show details</Link>
           </Card.Footer>
         </Card>
       )}

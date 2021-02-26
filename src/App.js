@@ -10,6 +10,7 @@ import NavMobile from './components/NavMobile/NavMobile';
 import Header from './components/Header/Header';
 import NavDesktop from './components/NavDesktop/NavDesktop';
 import UserCardList from './components/UserCardList/UserCardList';
+import MessagePage from './pages/Message/Message';
 
 const App = () => {
   const [messages, setMessages] = useState();
@@ -82,6 +83,9 @@ const App = () => {
                     <UserCardList key={user._id} {...user} />
                   ))}
               </div>
+            </Route>
+            <Route path="/messages/:id">
+              <MessagePage />
             </Route>
             <Redirect to="/" />
           </Switch>
